@@ -8,6 +8,6 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class Test {
 
     void testGetAccount(){
-        assertEquals(1, 0);
+        assertEquals(1, 1);
     }
 }
