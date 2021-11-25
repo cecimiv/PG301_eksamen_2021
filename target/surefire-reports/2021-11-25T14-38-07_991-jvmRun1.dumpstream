@@ -1,0 +1,50 @@
+# Created at 2021-11-25T14:38:10.960
+Corrupted STDOUT by directly writing to native stream in forked JVM 1. Stream '#'.
+java.lang.IllegalArgumentException: Stream stdin corrupted. Expected comma after third character in command '#'.
+	at org.apache.maven.plugin.surefire.booterclient.output.ForkClient$OperationalData.<init>(ForkClient.java:507)
+	at org.apache.maven.plugin.surefire.booterclient.output.ForkClient.processLine(ForkClient.java:210)
+	at org.apache.maven.plugin.surefire.booterclient.output.ForkClient.consumeLine(ForkClient.java:177)
+	at org.apache.maven.plugin.surefire.booterclient.output.ThreadedStreamConsumer$Pumper.run(ThreadedStreamConsumer.java:88)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+
+
+# Created at 2021-11-25T14:38:10.962
+Corrupted STDOUT by directly writing to native stream in forked JVM 1. Stream '# There is insufficient memory for the Java Runtime Environment to continue.'.
+java.lang.IllegalArgumentException: Stream stdin corrupted. Expected comma after third character in command '# There is insufficient memory for the Java Runtime Environment to continue.'.
+	at org.apache.maven.plugin.surefire.booterclient.output.ForkClient$OperationalData.<init>(ForkClient.java:507)
+	at org.apache.maven.plugin.surefire.booterclient.output.ForkClient.processLine(ForkClient.java:210)
+	at org.apache.maven.plugin.surefire.booterclient.output.ForkClient.consumeLine(ForkClient.java:177)
+	at org.apache.maven.plugin.surefire.booterclient.output.ThreadedStreamConsumer$Pumper.run(ThreadedStreamConsumer.java:88)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+
+
+# Created at 2021-11-25T14:38:10.963
+Corrupted STDOUT by directly writing to native stream in forked JVM 1. Stream '# Native memory allocation (mmap) failed to map 54525952 bytes for Failed to commit area from 0x0000000710e00000 to 0x0000000714200000 of length 54525952.'.
+java.lang.IllegalArgumentException: Stream stdin corrupted. Expected comma after third character in command '# Native memory allocation (mmap) failed to map 54525952 bytes for Failed to commit area from 0x0000000710e00000 to 0x0000000714200000 of length 54525952.'.
+	at org.apache.maven.plugin.surefire.booterclient.output.ForkClient$OperationalData.<init>(ForkClient.java:507)
+	at org.apache.maven.plugin.surefire.booterclient.output.ForkClient.processLine(ForkClient.java:210)
+	at org.apache.maven.plugin.surefire.booterclient.output.ForkClient.consumeLine(ForkClient.java:177)
+	at org.apache.maven.plugin.surefire.booterclient.output.ThreadedStreamConsumer$Pumper.run(ThreadedStreamConsumer.java:88)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+
+
+# Created at 2021-11-25T14:38:10.963
+Corrupted STDOUT by directly writing to native stream in forked JVM 1. Stream '# An error report file with more information is saved as:'.
+java.lang.IllegalArgumentException: Stream stdin corrupted. Expected comma after third character in command '# An error report file with more information is saved as:'.
+	at org.apache.maven.plugin.surefire.booterclient.output.ForkClient$OperationalData.<init>(ForkClient.java:507)
+	at org.apache.maven.plugin.surefire.booterclient.output.ForkClient.processLine(ForkClient.java:210)
+	at org.apache.maven.plugin.surefire.booterclient.output.ForkClient.consumeLine(ForkClient.java:177)
+	at org.apache.maven.plugin.surefire.booterclient.output.ThreadedStreamConsumer$Pumper.run(ThreadedStreamConsumer.java:88)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+
+
+# Created at 2021-11-25T14:38:10.964
+Corrupted STDOUT by directly writing to native stream in forked JVM 1. Stream '# C:\Users\ceciliemarie\Desktop\eksamen_2021-main\hs_err_pid14160.log'.
+java.lang.IllegalArgumentException: Stream stdin corrupted. Expected comma after third character in command '# C:\Users\ceciliemarie\Desktop\eksamen_2021-main\hs_err_pid14160.log'.
+	at org.apache.maven.plugin.surefire.booterclient.output.ForkClient$OperationalData.<init>(ForkClient.java:507)
+	at org.apache.maven.plugin.surefire.booterclient.output.ForkClient.processLine(ForkClient.java:210)
+	at org.apache.maven.plugin.surefire.booterclient.output.ForkClient.consumeLine(ForkClient.java:177)
+	at org.apache.maven.plugin.surefire.booterclient.output.ThreadedStreamConsumer$Pumper.run(ThreadedStreamConsumer.java:88)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+
+
