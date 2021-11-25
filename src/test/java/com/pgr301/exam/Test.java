@@ -17,6 +17,6 @@ class TestAll {
         Transaction transaction = new Transaction();
         double amount = 1000;
         transaction.setAmount(amount);
-        assertEquals(amount, 1000);
+        assertEquals(amount, 2000);
     }
 }
