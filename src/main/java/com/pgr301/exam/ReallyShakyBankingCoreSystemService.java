@@ -63,7 +63,7 @@ class ReallyShakyBankingCoreSystemService implements BankingCoreSystmeService {
 
     private Account getOrCreateAccount(String accountId) {
         if (theBank.get(accountId) == null) {
-            Account a = new ccount();
+            Account a = new Account();
             a.setId(accountId);
             theBank.put(accountId, a);
         }
