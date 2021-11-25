@@ -22,7 +22,7 @@ jobs:
           distribution: 'adopt'
           cache: maven
       - name: Build with Maven
-        run: mvn --batch-mode --update-snapshots verify
+        run: mvn -B package --file pom.xml
   make_artifact:
     runs-on: ubuntu-latest
     needs: [ build_and_test ]
