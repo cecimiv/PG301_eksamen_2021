@@ -18,6 +18,7 @@
 	<packaging>jar</packaging>
 
 	<dependencies>
+		<!--Enables actuators to monitor metrics-->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-actuator</artifactId>
@@ -44,6 +45,12 @@
 					<artifactId>junit-vintage-engine</artifactId>
 				</exclusion>
 			</exclusions>
+		</dependency>
+		<dependency>
+			<!--Configure micrometer to deliver metrics to Influx-->
+			<groupId>io.micrometer</groupId>
+			<artifactId>micrometer-registry-influx</artifactId>
+			<version>1.5.5</version>
 		</dependency>
 	</dependencies>
 
