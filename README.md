@@ -33,7 +33,7 @@ Kommando for å lage bucket med eu-west-1 som region:
 
 aws s3api create-bucket --bucket my-bucket --region eu-west-1 --create-bucket-configuration LocationConstraint=eu-west-1
 
-4. Docker -[]
+4. Docker -[x]
 
 For å bygge et container image kjører man:
 

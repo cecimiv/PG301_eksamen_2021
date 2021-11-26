@@ -116,6 +116,6 @@ jobs:
           aws ecr get-login-password --region eu-west-1 | docker login --username AWS --password-stdin 244530008913.dkr.ecr.eu-west-1.amazonaws.com
           docker build . -t bank
           docker tag bank:latest 244530008913.dkr.ecr.eu-west-1.amazonaws.com/ceiv001:latest
-          docker push 244530008913.dkr.ecr.eu-west-1.amazonaws.com/ceiv001:latest*/
+          docker push 244530008913.dkr.ecr.eu-west-1.amazonaws.com/ceiv001:latest
 
 
