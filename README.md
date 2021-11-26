@@ -11,11 +11,27 @@ git push https://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@github.com/cecimiv/PG3
 
 aws s3api create-bucket --bucket my-bucket --region eu-west-1
 
-aws configure
-AWS Access Key ID [None]: AKIAIOSFODNN7EXAMPLE
-AWS Secret Access Key [None]: wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY
-Default region name [None]: eu-west-1
-Default output format [None]: json
+ASW CLI
+
+For å konfigurere AWS-nøkler må sensor først lage access keys for sin bruker manuelt:
+
+ 1. Gå inn på sin IAM bruker i AWS Console.
+ 2. Velge "Users" i navigasjonspanelet.
+ 3. Velge navnet på sin egen bruker, og velge Security credentials
+ 4. Trykke på "Create Access Key" i Access Key seksjonen
+ 5. Trykk "Show" for å vise Access key og Secret access key. Last ned .csv fila med nøkkelparet for å lagre de, da
+    disse kun vises en gang.
+
+Derretter må sensor bruke AWS CLI for å konfigurere access keys.
+    aws configure
+    AWS Access Key ID [None]: AKIAIOSFODNN7EXAMPLE
+    AWS Secret Access Key [None]: wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY
+    Default region name [None]: eu-west-1
+    Default output format [None]: json
+
+Kommando for å lage bucket med eu-west-1 som region:
+
+aws s3api create-bucket --bucket my-bucket --region eu-west-1 --create-bucket-configuration LocationConstraint=eu-west-1
 
 4. Docker -[]
 
