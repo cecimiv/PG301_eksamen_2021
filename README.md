@@ -6,6 +6,11 @@ git push https://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@github.com/cecimiv/PG3
 ##Oppgaver fullført
 
 1. Pipeline -[x]
+   
+  ![img.png](img.png)
+
+
+
 2. Feedback -[]
 3. Terraform -[]
 
