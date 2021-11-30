@@ -3,9 +3,6 @@
 
 git push https://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@github.com/cecimiv/PG301_eksamen_2021
 
-##Oppgaver fullført
-
-1. Pipeline -[x]
 
 Drøfteoppgaver:
 
@@ -84,7 +81,7 @@ Solid og kontinuerlig overvåkning er nødvendig for å vite om en applikasjon f
 
 
 
-###2. Feedback -[x]
+###Feedback -[x]
 
 **Finne totalt antall BackEndExceptions**
 select SUM(*) from http_server_requests group by exception
@@ -106,7 +103,7 @@ Screenshot av metrics:
 
 
 
-###4.Terraform -[x]
+###Terraform -[x]
 
 Hvorfor funket terraformkoden i dette repoet for "Jens" første gang det ble kjørt? Og hvorfor
 feiler det for alle andre etterpå, inkludert Jens etter at han ryddet på disken sin og slettet
@@ -139,7 +136,7 @@ For å konfigurere AWS-nøkler må sensor først lage access keys for sin bruker
         Default output format [None]: json
 
 
-###4.Docker -[x]
+###Docker -[x]
 
 For å bygge et container image kjører man:
 
