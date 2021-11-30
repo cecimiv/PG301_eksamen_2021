@@ -6,6 +6,8 @@ on:
       - "infra/**"
     branches: [ main ]
   pull_request:
+    paths:
+      - "infra/**"
     branches: [ main ]
 
 jobs:
