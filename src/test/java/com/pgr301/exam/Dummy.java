@@ -17,8 +17,8 @@ public class Dummy {
     void testTransactionAmount(){
 
         Transaction transaction=new Transaction();
-        double amount=2000;
+        double amount=1000;
         transaction.setAmount(amount);
-        assertEquals(amount,2000);
+        assertEquals(amount,1000);
     }
 }
