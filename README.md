@@ -45,31 +45,32 @@ Det er også veldig viktig med rene commits og håndtering av branches.  Hver co
  
 **1. Samarbeid**
  
-	Problemer:
+Problemer:
  
-	o	Alle driver faktaløs "Blamestorming" uten å fokusere på å finne ut av hvor problemet ligger.
-	o	Det finnes et team i SkalBank som jobber med manuelle tester og drift; "Team Dino". Teamet er på ca 100 ansatte og SkalBank vurderer å rekruttere ytterligere for å øke 			kvaliteten på leveransene som har vært fallende siden lansering
-	o	Hver gang en ny versjon av API skal releases, lager tech lead "Jens" en JAR han gir til "Team Dino"".
+    o	Alle driver faktaløs "Blamestorming" uten å fokusere på å finne ut av hvor problemet ligger.
+    o	Det finnes et team i SkalBank som jobber med manuelle tester og drift; "Team Dino". Teamet er på ca 100 ansatte og SkalBank vurderer å rekruttere ytterligere for å øke 			kvaliteten på leveransene som har vært fallende siden lansering
+    o	Hver gang en ny versjon av API skal releases, lager tech lead "Jens" en JAR han gir til "Team Dino"".
 
-	Et av nøkkelprinsippene bak DevOps er samarbeid. Her virker det som de to teamene jobber veldig separat og overlater ansvar til hverandre, ettersom det foregår mye 					"Blamestorming". Dette er ganske problematisk hvis man skal få DevOps til å fungere. DevOps krever god kommunikasjon, tillit og feedback seg i mellom. Hele teamet bør ha 			ansvar og eierskap til applikasjonen fra idé til leveranse. Team Dino og team API burde derfor slått seg sammen til ett team som jobber sammen gjennom hele 							systemutviklingsprosessen.
+Et av nøkkelprinsippene bak DevOps er samarbeid. Her virker det som de to teamene jobber veldig separat og overlater ansvar til hverandre, ettersom det foregår mye 					"Blamestorming". Dette er ganske problematisk hvis man skal få DevOps til å fungere. DevOps krever god kommunikasjon, tillit og feedback seg i mellom. Hele teamet bør ha 			ansvar og eierskap til applikasjonen fra idé til leveranse. Team Dino og team API burde derfor slått seg sammen til ett team som jobber sammen gjennom hele 							systemutviklingsprosessen.
 
-	Bør ikke bruke JAR, men flytte ferdigbyggede pakker fra miljø til miljø for å fjerne pakking som feilkilde, teks med Maven artifacts, Docker image eller Zip.
+Bør ikke bruke JAR, men flytte ferdigbyggede pakker fra miljø til miljø for å fjerne pakking som feilkilde, teks med Maven artifacts, Docker image eller Zip.
  
  
 **2. Automasjon**
  
-	Problemer:
+Problemer:
+
 	o	Applikasjonen er veldig ustabil
 	o	Det er vanskelig å si om problemet ligger i API eller kjernesystemet.
 	o	Manuelle tester og drift
 	o	Responstidene er veldig variabel, og Applikasjonen feiler med sporadiske "BackEndException"
 	o	Mellom fem og ti utviklere committer til main branch kontinuerlig, uten nødvendigvis å kompilere koden og kjøre tester
 
-	Her er ingenting automatisert, CI/CD er ikke implementert. Tester, drift og deployment skjer manuelt. Dette er utrolig tidkrevende og skaper merarbeid for alle parter for å 		skjønne hvor feilen ligger når noe går galt. Uten automasjon er det større risiko for at menneskelige feil oppstår, og det tar mye lengre tid å finne feil når de oppstår. Å 		ha DevOps som underliggende prinsipp uten å ha implementert kontinuerlig integrasjon (CI) og kontinuelige leveranser (CD) er svært lite effektivt, fører til mye "waste" og er 	 ofte dømt til å mislykkes. 
+Her er ingenting automatisert, CI/CD er ikke implementert. Tester, drift og deployment skjer manuelt. Dette er utrolig tidkrevende og skaper merarbeid for alle parter for å 		skjønne hvor feilen ligger når noe går galt. Uten automasjon er det større risiko for at menneskelige feil oppstår, og det tar mye lengre tid å finne feil når de oppstår. Å 		ha DevOps som underliggende prinsipp uten å ha implementert kontinuerlig integrasjon (CI) og kontinuelige leveranser (CD) er svært lite effektivt, fører til mye "waste" og er 	 ofte dømt til å mislykkes. 
 
-	Med CI integreres ny kode i små steg, med branch protection med pull requests og peer reviews eller statussjekker før merge skjer for å oppdage feil raskt. Hyppig integrering 	 kombinert etterfulgt av automatisert bygging og testing sikrer at koden fungerer som den skal. CI sørger for at man finner feil fort og dermed kan fikse de med en gang. 			Mangel på dette er da naturligvis at man ikke oppdager feil før senere i prosessen teamet  bruker lengre tid på å gjenopprette tjenesten etter feilen. 
+Med CI integreres ny kode i små steg, med branch protection med pull requests og peer reviews eller statussjekker før merge skjer for å oppdage feil raskt. Hyppig integrering 	 kombinert etterfulgt av automatisert bygging og testing sikrer at koden fungerer som den skal. CI sørger for at man finner feil fort og dermed kan fikse de med en gang. 			Mangel på dette er da naturligvis at man ikke oppdager feil før senere i prosessen teamet  bruker lengre tid på å gjenopprette tjenesten etter feilen. 
 
-	Med CD sikrer man at deployment til produksjon med kvalitet, ved å levere hver lille endring til et produksjonsmiljø som sikrer at alt av funksjonelitet er på plass gjennom 		automatiserte tester. Denne prosessen bør også versjonskontrolleres og være lik for alle miljøet, hvis ikke kan dette bli kilden til feil. Bør også inkludere "smoke tests" i 	deployment-prosessen for å få rask tilbakemelding på om noe er feil, med rollback trigger dersom det oppstår. 
+Med CD sikrer man at deployment til produksjon med kvalitet, ved å levere hver lille endring til et produksjonsmiljø som sikrer at alt av funksjonelitet er på plass gjennom 		automatiserte tester. Denne prosessen bør også versjonskontrolleres og være lik for alle miljøet, hvis ikke kan dette bli kilden til feil. Bør også inkludere "smoke tests" i 	deployment-prosessen for å få rask tilbakemelding på om noe er feil, med rollback trigger dersom det oppstår. 
   
  
 **3. Overvåking og feedback**
@@ -79,11 +80,11 @@ Det er også veldig viktig med rene commits og håndtering av branches.  Hver co
 	o	Det er umulig å se hva som faktisk er feil. Applikasjonen lager ikke logger, og gir ikke fra seg noe form for telemetri
 	o	Ingen innsikt i applikasjonens tilstand
 
-	Solid og kontinuerlig overvåkning er nødvendig for å vite om en applikasjon fungerer som den skal.  Fremfor å overfladisk overvåke applikasjonen og starte den på nytt manuelt 	 hver natt etter behov, bør automatisert overvåkning implementeres med logs, traces og metrics. Med ordentlige disse verktøyene vil teamet bli gjort oppmerksomme på 				produksjonsfeil, bugs og andre mangler før de oppstår og vil gjøre det lettere å finne og løse problemet. Uten dette vil ikke teamet vite NÅR en feil oppstår, eller hva som 		forårsaket feilen - og man må fomle i mørket for å finne roten til problemet.
+Solid og kontinuerlig overvåkning er nødvendig for å vite om en applikasjon fungerer som den skal.  Fremfor å overfladisk overvåke applikasjonen og starte den på nytt manuelt 	 hver natt etter behov, bør automatisert overvåkning implementeres med logs, traces og metrics. Med ordentlige disse verktøyene vil teamet bli gjort oppmerksomme på 				produksjonsfeil, bugs og andre mangler før de oppstår og vil gjøre det lettere å finne og løse problemet. Uten dette vil ikke teamet vite NÅR en feil oppstår, eller hva som 		forårsaket feilen - og man må fomle i mørket for å finne roten til problemet.
 
 
 
-####2. Feedback -[x]
+###2. Feedback -[x]
 
 **Finne totalt antall BackEndExceptions**
 select SUM(*) from http_server_requests group by exception
@@ -96,56 +97,66 @@ select  SUM(*) from time_transfer group by exception (finne antall exceptions sp
 **Finne responstider per endpoint**
 select * from  time_update(eller time_balance, time_transfer)
 
+docker run --rm -d --name influxdb -p 8083:8083 -p 8086:8086 -p 25826:25826/udp -v %cd%/influxdb:/var/lib/influxdb -v %cd%/influxdb.confro -v %cd%/types.dbro influxdb:1.0
+docker run -d -p 3000:3000 --name grafana grafana/grafana:6.5.0
+
+Screenshot av metrics:
+![img.png](img.png)
 
 
 
 
+###4.Terraform -[x]
 
+Hvorfor funket terraformkoden i dette repoet for "Jens" første gang det ble kjørt? Og hvorfor
+feiler det for alle andre etterpå, inkludert Jens etter at han ryddet på disken sin og slettet
+terraform.tfstate filen?
 
-4. Terraform -[x]
+Dette funket for Jens første gang det ble kjørt fordi dette var hans unike bucket. Det feiler for alle andre fordi bucketen med han laget allerede eksisterer.
+Hver bucket må være unik for hver AWS-bruker, alle må ha sin egen unike bucket.
 
-aws s3api create-bucket --bucket my-bucket --region eu-west-1
 
 ASW CLI
 
+For å lage en bucket ved hjelp av CLI kan hen bruke denne kommandoen:
+
+    aws s3api create-bucket --bucket my-bucket --region eu-west-1 --create-bucket-configuration LocationConstraint=eu-west-1
+
 For å konfigurere AWS-nøkler må sensor først lage access keys for sin bruker manuelt:
 
- 1. Gå inn på sin IAM bruker i AWS Console.
- 2. Velge "Users" i navigasjonspanelet.
- 3. Velge navnet på sin egen bruker, og velge Security credentials
- 4. Trykke på "Create Access Key" i Access Key seksjonen
- 5. Trykk "Show" for å vise Access key og Secret access key. Last ned .csv fila med nøkkelparet for å lagre de, da
-    disse kun vises en gang.
+     1. Gå inn på sin IAM bruker i AWS Console.
+     2. Velge "Users" i navigasjonspanelet.
+     3. Velge navnet på sin egen bruker, og velge Security credentials
+     4. Trykke på "Create Access Key" i Access Key seksjonen
+     5. Trykk "Show" for å vise Access key og Secret access key. Last ned .csv fila med nøkkelparet for å lagre de, da
+        disse kun vises en gang.
+    
+    Derretter må sensor bruke AWS CLI for å konfigurere access keys.
+        aws configure
+        AWS Access Key ID [None]: ACCESSKEY
+        AWS Secret Access Key [None]: SECRETACCESSKEY 
+        Default region name [None]: eu-west-1
+        Default output format [None]: json
 
-Derretter må sensor bruke AWS CLI for å konfigurere access keys.
-    aws configure
-    AWS Access Key ID [None]: AKIAIOSFODNN7EXAMPLE
-    AWS Secret Access Key [None]: wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY
-    Default region name [None]: eu-west-1
-    Default output format [None]: json
 
-Kommando for å lage bucket med eu-west-1 som region:
-
-aws s3api create-bucket --bucket my-bucket --region eu-west-1 --create-bucket-configuration LocationConstraint=eu-west-1
-
-4. Docker -[x]
+###4.Docker -[x]
 
 For å bygge et container image kjører man:
 
- docker build . 
+    docker build . 
 
  For å gi container imaget kan man legge til en tag, f.eks:
 
- docker build . --tag app
+    docker build . --tag app
 
 For å starte en container og lytte på port 7777:
 
- docker run -p 7777:80 ceiv001/app
+    docker run -p 7777:80 ceiv001/app
 
 For å kjøre samme applikasjon to ganger, hvor den ene bruker port 7777 og den andre 8888:
 
-docker run -d -p 7777:80 navn_på_image
-docker run -d -p 8888:80 navn_på_image
+    docker run -d -p 7777:80 navn_på_image
+    docker run -d -p 8888:80 navn_på_image
 
 
  

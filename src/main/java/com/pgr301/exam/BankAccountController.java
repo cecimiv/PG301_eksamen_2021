@@ -61,7 +61,6 @@ public class BankAccountController implements ApplicationListener<ApplicationRea
     @Override
     public void onApplicationEvent(ApplicationReadyEvent applicationReadyEvent) {
         meterRegistry.counter("http_server_requests");
-        meterRegistry.timer("applicationevent_timer");
 
     }
 
