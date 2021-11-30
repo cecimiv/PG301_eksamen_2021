@@ -7,7 +7,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @SpringBootTest
-public class Dummy {
+public class ShakyBankTest {
 
     @Test
     void contextLoads() {
@@ -17,8 +17,8 @@ public class Dummy {
     void testTransactionAmount(){
 
         Transaction transaction=new Transaction();
-        double amount=2000;
+        double amount=1000;
         transaction.setAmount(amount);
-        assertEquals(amount,2000);
+        assertEquals(amount,1000);
     }
 }
