@@ -6,13 +6,8 @@ git push https://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@github.com/cecimiv/PG3
 ##Oppgaver fullført
 
 1. Pipeline -[x]
-   
-  ![img.png](img.png)
-
-
-
-2. Feedback -[]
-3. Terraform -[]
+2. Feedback -[x]
+3. Terraform -[x]
 
 aws s3api create-bucket --bucket my-bucket --region eu-west-1
 

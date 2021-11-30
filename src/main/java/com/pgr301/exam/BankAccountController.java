@@ -28,27 +28,30 @@ public class BankAccountController implements ApplicationListener<ApplicationRea
         this.meterRegistry = meterRegistry;
     }
 
-    @Timed(description = "Time spent transferring money")
+    @Timed("time_transfer")
     @PostMapping(path = "/account/{fromAccount}/transfer/{toAccount}", consumes = "application/json", produces = "application/json")
     public void transfer(@RequestBody Transaction tx, @PathVariable String fromAccount, @PathVariable String toAccount) {
         meterRegistry.counter("transfer", "amount", String.valueOf(tx.getAmount())).increment();
+        meterRegistry.timer("transfertimer", "time", String.valueOf(tx.getAmount())).baseTimeUnit();
         bankService.transfer(tx, fromAccount, toAccount);
     }
 
 
-    @Timed(description = "Time spent updating account")
+    @Timed("time_update")
     @PostMapping(path = "/account", consumes = "application/json", produces = "application/json")
     public ResponseEntity<Account> updateAccount(@RequestBody Account a) {
         meterRegistry.counter("update_account").increment();
+        meterRegistry.timer("updatetimer");
+
         bankService.updateAccount(a);
         return new ResponseEntity<>(a, HttpStatus.OK);
     }
 
-    @Timed(description = "Time spent getting account balance page")
+    @Timed("time_balance")
     @GetMapping(path = "/account/{accountId}", consumes = "application/json", produces = "application/json")
     public ResponseEntity<Account> balance(@PathVariable String accountId) {
         meterRegistry.counter("balance").increment();
-        meterRegistry.timer("my_timer");
+        meterRegistry.timer("balancetimer", "duration").baseTimeUnit();
         Account account = ofNullable(bankService.getAccount(accountId)).orElseThrow(AccountNotFoundException::new);
         meterRegistry.gauge("account_balance", account.getBalance());
         return new ResponseEntity<>(account, HttpStatus.OK);
@@ -58,6 +61,7 @@ public class BankAccountController implements ApplicationListener<ApplicationRea
     @Override
     public void onApplicationEvent(ApplicationReadyEvent applicationReadyEvent) {
         meterRegistry.counter("http_server_requests");
+        meterRegistry.timer("applicationevent_timer");
 
     }
 
