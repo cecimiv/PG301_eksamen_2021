@@ -6,7 +6,7 @@ NB: Ettersom det ikke stod noe i eksamensteksten at commit-historikk vil vurdere
 
 Drøfteoppgaver:
 
-####1. Beskriv med ord eller skjermbilder hvordan man kan konfigurere GitHub på en måte som gir bedre kontroll på utviklingsprosessen. Spesielt med tanke på å hindre kode som ikke kompilerer og feilende tester fra å bli integrert i main branch. 
+### 1. Beskriv med ord eller skjermbilder hvordan man kan konfigurere GitHub på en måte som gir bedre kontroll på utviklingsprosessen. Spesielt med tanke på å hindre kode som ikke kompilerer og feilende tester fra å bli integrert i main branch. 
  
 For å unngå at kode som ikke kompilerer og feilende tester blir integrert i main branch kan man bruke Branch Protection. Man kan konfigurere en "branch protection rule" på main branch, slik at man må få pull requests reviewet av noen andre før den merges, eller at alle statussjekker må passere før merge. Slik konfigurerer man dette:
  
@@ -18,12 +18,12 @@ For å unngå at kode som ikke kompilerer og feilende tester blir integrert i ma
    o	Huk av på "Require status checks to pass before merging" , slik at commits ikke kan merges før alle statussjekker passerer. Søk deretter etter statussjekker som du ønsker       å ha med, i dette tilfellet "test"
  
  
-####2.	Beskriv med ord eller skjermbilder hvordan GitHub kan konfigureres for å sikre at minst ett annet medlem av teamet har godkjent en pull request før den merges. 
+### 2.	Beskriv med ord eller skjermbilder hvordan GitHub kan konfigureres for å sikre at minst ett annet medlem av teamet har godkjent en pull request før den merges. 
  
 Igjen må man skru på branch protection på den branchen man ønsker å beskytte fra commits. 
 Velg "Require pull request before merging",  og deretter "Require approvals". Velg så hvor mange som må godkjenne pull requests før merge.
  
-####3.	Beskriv hvordan arbeidsflyten for hver enkelt utvikler bør være for å få en effektiv som mulig utviklingsprosess, spesielt hvordan hver enkelt utvikler bør jobbe med Brancher i Github hver gang han eller hun starter en ny oppgave.
+### 3.	Beskriv hvordan arbeidsflyten for hver enkelt utvikler bør være for å få en effektiv som mulig utviklingsprosess, spesielt hvordan hver enkelt utvikler bør jobbe med Brancher i Github hver gang han eller hun starter en ny oppgave.
  
 For å sikre en effektiv arbeidsflyt bør man for det første fokusere på å fjerne så mye "waste" som mulig i utviklingsprosessen.  Eksempler på "waste" kan være oppgaver som er delvis fullført, å måtte vente lenge på å få arbeid, dokumentasjon som ikke brukes, prosesser som ikke tilfører kundeverdi, og andre unødvendigheter. Det må fokuseres på å ikke forårsake merarbeid, og kun utvikle den funksjonaliteten som er etterspurt. Man må unngå å bytte mye mellom oppgaver, og avbrudd som leder til "context switching".  
  
@@ -81,7 +81,7 @@ Solid og kontinuerlig overvåkning er nødvendig for å vite om en applikasjon f
 
 
 
-###Feedback -[x]
+### Feedback -[x]
 
 **Finne totalt antall BackEndExceptions**
 select SUM(*) from http_server_requests group by exception
@@ -103,7 +103,7 @@ Screenshot av metrics:
 
 
 
-###Terraform -[x]
+### Terraform -[x]
 
 Hvorfor funket terraformkoden i dette repoet for "Jens" første gang det ble kjørt? Og hvorfor
 feiler det for alle andre etterpå, inkludert Jens etter at han ryddet på disken sin og slettet
@@ -136,7 +136,7 @@ For å konfigurere AWS-nøkler må sensor først lage access keys for sin bruker
         Default output format [None]: json
 
 
-###Docker -[x]
+### Docker -[x]
 
 For å bygge et container image kjører man:
 
