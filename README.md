@@ -1,4 +1,4 @@
-# Eksamen PGR301
+   # Eksamen PGR301
 
 
 NB: Ettersom det ikke stod noe i eksamensteksten at commit-historikk vil vurderes av sensor, har jeg ikke ikke squashet commits, slik man bør gjøre for å få en ryddig commit-historikk. Vet at dette er noe som burde blitt gjort for å følge DevOps.
@@ -23,6 +23,8 @@ For å unngå at kode som ikke kompilerer og feilende tester blir integrert i ma
 Igjen må man skru på branch protection på den branchen man ønsker å beskytte fra commits. 
 Velg "Require pull request before merging",  og deretter "Require approvals". Velg så hvor mange som må godkjenne pull requests før merge.
  
+
+
 ### 3.	Beskriv hvordan arbeidsflyten for hver enkelt utvikler bør være for å få en effektiv som mulig utviklingsprosess, spesielt hvordan hver enkelt utvikler bør jobbe med Brancher i Github hver gang han eller hun starter en ny oppgave.
  
 For å sikre en effektiv arbeidsflyt bør man for det første fokusere på å fjerne så mye "waste" som mulig i utviklingsprosessen.  Eksempler på "waste" kan være oppgaver som er delvis fullført, å måtte vente lenge på å få arbeid, dokumentasjon som ikke brukes, prosesser som ikke tilfører kundeverdi, og andre unødvendigheter. Det må fokuseres på å ikke forårsake merarbeid, og kun utvikle den funksjonaliteten som er etterspurt. Man må unngå å bytte mye mellom oppgaver, og avbrudd som leder til "context switching".  
