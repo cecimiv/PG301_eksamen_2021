@@ -57,7 +57,7 @@ class ReallyShakyBankingCoreSystemService implements BankingCoreSystmeService {
     @Override
     public Account getAccount(String accountNumber) {
         randomizedWait(5000);
-        randomizeExceptionOrPanic(0.9f, 0.5f);
+        randomizeExceptionOrPanic(0.9f, 0.0f);
         return getOrCreateAccount(accountNumber);
     }
 
