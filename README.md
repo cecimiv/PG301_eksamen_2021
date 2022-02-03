@@ -1,4 +1,6 @@
-# Eksamen PGR301
+# Eksamen PGR301 
+
+# Karakter: A
 
 
 NB: Ettersom det ikke stod noe i eksamensteksten at commit-historikk vil vurderes av sensor, har jeg ikke ikke squashet commits, slik man bør gjøre for å få en ryddig commit-historikk. Vet at dette er noe som burde blitt gjort for å følge DevOps.
